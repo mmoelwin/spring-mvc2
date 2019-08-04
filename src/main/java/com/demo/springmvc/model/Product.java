@@ -1,5 +1,6 @@
 package com.demo.springmvc.model;
 
+import com.demo.springmvc.Validation.GreaterThanTen;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -16,8 +17,9 @@ public class Product implements Serializable {
     private Integer id;
     private  String name;
     private double price;
+    @GreaterThanTen(message = "Quantity must be greater than 10!")
     private int quantity;
-    @DateTimeFormat(pattern = "dd-mm-yyyy")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate lastUpdated;
     @ManyToOne
     private Category category;
