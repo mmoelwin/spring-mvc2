@@ -1,6 +1,5 @@
 package com.demo.springmvc.service;
 
-import com.demo.springmvc.exception.MyEntityNotFoundException;
 import com.demo.springmvc.model.Product;
 import com.demo.springmvc.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,9 +33,9 @@ public class ProductServiceImpl implements ProductService {
 //        return  productRepository.findById(id)
 //                .orElseThrow(()->new MyEntityNotFoundException(id + " Not Found."));
 
-        return  productRepository.findById(id)
-                .orElseThrow(()->new EntityNotFoundException(id + " Not Found !"));
-
+//        return  productRepository.findById(id)
+//                .orElseThrow(()->new EntityNotFoundException(id + " Not Found !"));
+        return  productRepository.findById(id).orElse(null);
     }
 
     @Override

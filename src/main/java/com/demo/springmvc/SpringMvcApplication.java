@@ -39,4 +39,5 @@ public class SpringMvcApplication {
                     .forEach(System.out::println);
         };
     }
+
 }
