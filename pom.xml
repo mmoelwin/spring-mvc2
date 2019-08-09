@@ -59,6 +59,11 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+
+        </dependency>
+        <dependency>
             <groupId>nz.net.ultraq.thymeleaf</groupId>
             <artifactId>thymeleaf-layout-dialect</artifactId>
             <version>2.3.0</version>
@@ -76,7 +81,11 @@
             <artifactId>jackson-dataformat-xml</artifactId>
             <version>2.9.9</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>itextpdf</artifactId>
+            <version>5.5.13.1</version>
+        </dependency>
     </dependencies>
 
     <build>
