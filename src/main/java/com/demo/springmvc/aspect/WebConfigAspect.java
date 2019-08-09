@@ -18,7 +18,10 @@ import java.time.LocalDateTime;
 public class WebConfigAspect {
 
     private ProductService productService;
+    public WebConfigAspect(ProductService productService) {
 
+        this.productService = productService;
+    }
     private static Logger logger = LoggerFactory.getLogger(WebConfigAspect.class);
 
 //                              showAllProducts(method)

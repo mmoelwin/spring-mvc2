@@ -80,7 +80,7 @@ public class ProductController  {
     @PostMapping("/products/update")
     public String processUpdate(Product product, RedirectAttributes redirectAttributes){
         productService.update(product, updateId);
-        redirectAttributes.addFlashAttribute("update",true);
+        redirectAttributes.addFlashAttribute("product1",true);
         return "redirect:/products";
     }
 
