@@ -17,27 +17,27 @@ public class SpringMvcApplication {
 
     private static Logger logger= LoggerFactory.getLogger(SpringMvcApplication.class);
 
-    @Autowired
-    private ApplicationContext applicationContext;
+//    @Autowired
+//    private ApplicationContext applicationContext;
 
     public static void main(String[] args) {
         SpringApplication.run(SpringMvcApplication.class, args);
     }
 
-    @Bean @Profile("dev")
-    public CommandLineRunner run(){
-        return args -> {
-            logger.info("Welcome Spring MVC.");
-            logger.error("Sample Logger message");
-            logger.info("Sample Logger message");
-            logger.warn("Sample Logger message");
-            logger.trace("Sample Logger message");
-            logger.debug("Sample Logger message");
-
-            Arrays.stream(this.applicationContext.getBeanDefinitionNames())
-                    .sorted()
-                    .forEach(System.out::println);
-        };
-    }
+//    @Bean @Profile("dev")
+//    public CommandLineRunner run(){
+//        return args -> {
+//            logger.info("Welcome Spring MVC.");
+//            logger.error("Sample Logger message");
+//            logger.info("Sample Logger message");
+//            logger.warn("Sample Logger message");
+//            logger.trace("Sample Logger message");
+//            logger.debug("Sample Logger message");
+//
+//            Arrays.stream(this.applicationContext.getBeanDefinitionNames())
+//                    .sorted()
+//                    .forEach(System.out::println);
+//        };
+//    }
 
 }

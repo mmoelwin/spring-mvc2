@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -19,6 +20,7 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
+import org.thymeleaf.extras.springsecurity5.dialect.SpringSecurityDialect;
 
 import javax.persistence.EntityNotFoundException;
 import javax.servlet.http.HttpServletRequest;
@@ -69,6 +71,11 @@ public class WebConfig implements WebMvcConfigurer {
 
         return prettyTime;
     }
+    @Bean
+    public SpringSecurityDialect springSecurityDialect(){
+        SpringSecurityDialect springSecurityDialect=new SpringSecurityDialect();
+        return  springSecurityDialect;
+    }
 
     /*@ExceptionHandler(EntityNotFoundException.class)
     public ResponseEntity<String> handleEntityNotFoundException(EntityNotFoundException ex){
@@ -92,8 +99,15 @@ public class WebConfig implements WebMvcConfigurer {
         return mv;
     }
 
+    @Bean
+    public BCryptPasswordEncoder bCryptPasswordEncoder(){
+        BCryptPasswordEncoder  bCryptPasswordEncoder=new BCryptPasswordEncoder();
+        return bCryptPasswordEncoder;
+    }
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addRedirectViewController("/","/products");
     }
+
+
 }

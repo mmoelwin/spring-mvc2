@@ -24,6 +24,10 @@ public class MyErrorController implements ErrorController {
                 model.addAttribute("status",obj.toString());
 
             }
+            if (Integer.valueOf(obj.toString())==403){
+                model.addAttribute("msg","You are Forbidden ...");
+                model.addAttribute("status",obj.toString());
+            }
         }
         return "error";
     }

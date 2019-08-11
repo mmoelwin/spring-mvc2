@@ -19,7 +19,7 @@
                 <label for="name" th:text="#{category.name}"></label>
                 <input type="text"
                        th:field="*{name}"
-                       class="form-control" name="" id="name" aria-describedby="helpId" placeholder="Enter Name..">
+                        class="form-control" name="" id="name" aria-describedby="helpId" placeholder="Enter Name..">
                 <small th:if="${#fields.errors('name')}"
                        th:errors="*{name}" class="text-danger"></small>
             </div>
