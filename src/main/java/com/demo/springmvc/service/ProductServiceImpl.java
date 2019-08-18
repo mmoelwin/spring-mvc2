@@ -29,12 +29,8 @@ public class ProductServiceImpl implements ProductService {
 //          using .getOne(id) > getOne is using EntityNotFoundException
 //        return productRepository.getOne(id);
 
-//        using .findById(id) > can use customise error exception
 //        return  productRepository.findById(id)
-//                .orElseThrow(()->new MyEntityNotFoundException(id + " Not Found."));
-
-//        return  productRepository.findById(id)
-//                .orElseThrow(()->new EntityNotFoundException(id + " Not Found !"));
+//                .orElseThrow(()->new EntityNotFoundException("Product id " + id + " Not Found !"));
         return  productRepository.findById(id).orElse(null);
     }
 
